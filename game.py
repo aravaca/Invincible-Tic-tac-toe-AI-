@@ -195,6 +195,7 @@ if __name__ == '__main__':
                     print("\nThanks for playing.\n")
                     time.sleep(0.4)
                     print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+                    time.sleep(10)
                     print('')
 
             except TypeError:
