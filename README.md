@@ -1,6 +1,6 @@
 # About Tic-tac-toe
 
-tic-tac-toe is a classic 3x3 tic-tac-toe game where you play against an invincible AI computer. The AI uses the minimax algorithm and computes heuristic values (in other words, looks ahead moves) to make the optimal choice.
+This project includes a classic 3x3 tic-tac-toe game where you play against an invincible AI computer. The AI uses the minimax algorithm and computes heuristic values (in other words, it looks ahead moves) to make the optimal choice.
 
 ## Description
 
