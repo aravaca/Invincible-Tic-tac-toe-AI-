@@ -1,5 +1,5 @@
 import time
-from player import HumanPlayer, AIPlayer
+from player import HumanPlayer, AI_Player
 
 class TicTacToe:
 
@@ -146,7 +146,7 @@ def play(game, x_player, o_player, print_game=True, init=True):
 
 if __name__ == '__main__':
     x_player = HumanPlayer('X')
-    o_player = AIPlayer('O')
+    o_player = AI_Player('O')
     again = True
     while again:
         t = TicTacToe() # generate a new game board every attempt

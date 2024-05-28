@@ -26,7 +26,7 @@ class HumanPlayer(Player):
                 print("Invalid square. Please try again")
         return val
 
-class AIPlayer(Player):
+class AI_Player(Player):
     def __init__(self, letter):
         super().__init__(letter)
     
