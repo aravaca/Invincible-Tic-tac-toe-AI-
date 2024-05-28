@@ -198,4 +198,4 @@ if __name__ == '__main__':
                     print('')
 
             except TypeError:
-                print("\nInvalid input. Please type y/n")
+                print("\nInvalid input. Please type y/n\n")
