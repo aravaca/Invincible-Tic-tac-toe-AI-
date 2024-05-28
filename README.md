@@ -1,4 +1,4 @@
-# About
+# Tic-tac-toe
 
 tic-tac-toe is a classic 3x3 tic-tac-toe game where you play against an invincible AI computer. The AI uses the minimax algorithm and computes heuristic values (in other words, looks ahead moves) to make the optimal choice.
 
@@ -12,12 +12,11 @@ Then, follow the instructions as you play.
 
 NOTE:
 The grid uses 1-9 indexing from left to right in the following form:
-1|2|3
-4|5|6
-7|8|9
+1|2|3 \n
+4|5|6 \n
+7|8|9 \n
 
 ## Acknowledgement
-The source code for the basic version of the game is from Kylie Ying's GitHub (https://github.com/kying18). I want to give a special thanks to her wonderful YouTube tutorial. However, the class AI_Player in player.py, method get_owl in game.py, and the main method, which contains all necessary logic and procedures for the AI and its algorithm, are solely written on my own.
-I referred to Justin Wyss-Gallifent(https://math.umd.edu/~immortal/)'s notes for the minimax algorithm and heuristic function. I want to give a special thanks for his wonderful detailed notes.
+The source code for the basic version of the game is from Kylie Ying's GitHub (https://github.com/kying18). I want to give a special thanks to her wonderful YouTube tutorial. However, the class AI_Player in player.py, method get_owl in game.py, and the main method, which contains all necessary logic and procedures for the AI and its algorithm, are solely written on my own. I referred to notes from Justin Wyss-Gallifent (https://math.umd.edu/~immortal/) for the minimax algorithm and heuristic function. I want to give a special thanks to his wonderful detailed notes.
 
 
