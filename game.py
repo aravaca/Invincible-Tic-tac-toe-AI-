@@ -145,9 +145,12 @@ def play(game, x_player, o_player, print_game=True, init=True):
         print('It\'s a tie!')
 
 if __name__ == '__main__':
+    
     x_player = HumanPlayer('X')
     o_player = AI_Player('O')
     again = True
+
+    print("Welcome to Tic-tac-toe vs AI. Your goal is to win against the smart AI computer.")
 
     while again:
         t = TicTacToe() # generate a new game board every attempt
@@ -185,6 +188,7 @@ if __name__ == '__main__':
                         print("\nThanks for playing.\n")
                         time.sleep(0.4)
                         print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+                        time.sleep(3)
                         print('')
                     else:
                         raise TypeError
@@ -195,8 +199,8 @@ if __name__ == '__main__':
                     print("\nThanks for playing.\n")
                     time.sleep(0.4)
                     print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
-                    time.sleep(10)
+                    time.sleep(3)
                     print('')
-
+                    
             except TypeError:
                 print("\nInvalid input. Please type y/n\n")
