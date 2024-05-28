@@ -148,6 +148,7 @@ if __name__ == '__main__':
     x_player = HumanPlayer('X')
     o_player = AI_Player('O')
     again = True
+
     while again:
         t = TicTacToe() # generate a new game board every attempt
         valid_input = False
