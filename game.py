@@ -166,11 +166,11 @@ if __name__ == '__main__':
             except TypeError:
                 print("Invalid input. Please type y/n")
         
+        print("\nCurrent record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+        print('')
         valid_input = False
         while not valid_input:
             try:
-                print("\nCurrent record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
-                print('')
                 # this if statement prevents possible stack overflow and limits the maximum # of losses/ties to 100
                 if TicTacToe.loss <= 100 and TicTacToe.tie <= 100:
                     ans = str(input("Would you like to play again? (y/n): "))

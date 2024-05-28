@@ -43,7 +43,7 @@ class AI_Player(Player):
             # from the maximizer's(AI) # of OWLs. An OWL is a line which contains at least one of the 
             # player’s marks and none of the opponent’s
             heuristic = sim.get_owl(self.letter) - sim.get_owl(opponent_letter)
-            if heuristic > max:
+            if heuristic > max or (heuristic == max and square % 2 == 0): # the mod here prioritizes moves in diagonal squares
                 max = heuristic
                 ans = square
         return ans
