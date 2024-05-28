@@ -11,7 +11,7 @@ python game.py
 Then, follow the instructions as you play.
 
 NOTE:
-The grid uses 1-9 indexing from left to right in the following form:
+The grid uses 1-9 indexing from left to right in the following form:<br/>
 1|2|3<br/>
 4|5|6<br/>
 7|8|9<br/>
