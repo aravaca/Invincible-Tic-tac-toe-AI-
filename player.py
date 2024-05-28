@@ -16,14 +16,14 @@ class HumanPlayer(Player):
         valid_square = False
         val = None
         while not valid_square:
-            square = input(self.letter + '\'s turn. Input move (1-9): ')
+            square = input('Your turn (\'X\'). Input move (1-9): ')
             try:
                 val = int(square) - 1
                 if val not in game.available_moves():
                     raise ValueError
                 valid_square = True
             except ValueError:
-                print("Invalid square, try again")
+                print("Invalid square. Please try again")
         return val
 
 class AIPlayer(Player):
@@ -39,8 +39,9 @@ class AIPlayer(Player):
             # It does not affect the current status of the game
             sim = copy.deepcopy(game)
             sim.make_move(square, self.letter)
-            # heuristic is calculated by subtracting the minimizer's(HumanPlayer) OWL from the maximizer's(AI) OWL
-            # An OWL is a line which contains at least one of the player’s marks and none of the opponent’s
+            # The heuristic function is calculated by subtracting the minimizer's(HumanPlayer) # of OWLs 
+            # from the maximizer's(AI) # of OWLs. An OWL is a line which contains at least one of the 
+            # player’s marks and none of the opponent’s
             heuristic = sim.get_owl(self.letter) - sim.get_owl(opponent_letter)
             if heuristic > max:
                 max = heuristic

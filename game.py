@@ -2,6 +2,12 @@ import time
 from player import HumanPlayer, AIPlayer
 
 class TicTacToe:
+
+    # global variables that represent the scoreboard
+    win = 0
+    loss = 0
+    tie = 0
+
     def __init__(self):
         #initialize two variables board and current_winner
         self.board = [' ' for _ in range(9)] # 0-8
@@ -97,12 +103,12 @@ class TicTacToe:
         return count
 
 
-def play(game, x_player, o_player, print_game=True):
+def play(game, x_player, o_player, print_game=True, init=True):
 
     if print_game:
         game.print_board_nums()
 
-    letter = 'X'
+    letter = 'X' if init == True else 'O'
 
     while game.empty_squares():
         if letter == 'O':
@@ -112,24 +118,83 @@ def play(game, x_player, o_player, print_game=True):
         if game.make_move(square, letter):
 
             if print_game:
-                print(letter + ' makes a move to square {}'.format(square))
+                if letter == 'O':
+                    time.sleep(0.8) #delay execution to imitate an AI feel
+                    print('AI makes a move to square {}.'.format(square + 1))
+                else:
+                    print('You made a move to square {}.'.format(square + 1))
                 game.print_board()
                 print('')
 
             if game.current_winner:
                 if print_game:
-                    print(letter + ' wins!')
+                    if letter == 'O':
+                        TicTacToe.loss+=1
+                        print('AI wins!')
+                    else:
+                        TicTacToe.win+=1
+                        print("You win!!! (How though?? lol)")
                 return letter  # ends the loop and exits the game
             
             letter = 'O' if letter == 'X' else 'X'  # switches player
 
-        time.sleep(0.8)
+    # end of while loop
 
     if print_game:
+        TicTacToe.tie+=1
         print('It\'s a tie!')
 
 if __name__ == '__main__':
     x_player = HumanPlayer('X')
     o_player = AIPlayer('O')
-    t = TicTacToe()
-    play(t, x_player, o_player, print_game=True)
+    again = True
+    while again:
+        t = TicTacToe() # generate a new game board every attempt
+        valid_input = False
+        while not valid_input:
+            try:
+                print("")
+                ans = str(input("Would you like to go first? (y/n): "))
+                if "y" in ans.lower():
+                    valid_input = True
+                    play(t, x_player, o_player, print_game=True, init=True)    
+                elif "n" in ans.lower():
+                    valid_input = True
+                    play(t, x_player, o_player, print_game=True, init=False)    
+                else:
+                    raise TypeError
+            except TypeError:
+                print("Invalid input. Please type y/n")
+        
+        valid_input = False
+        while not valid_input:
+            try:
+                print("\nCurrent record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+                print('')
+                # this if statement prevents possible stack overflow and limits the maximum # of losses/ties to 100
+                if TicTacToe.loss <= 100 and TicTacToe.tie <= 100:
+                    ans = str(input("Would you like to play again? (y/n): "))
+                    if "y" in ans.lower():
+                        valid_input = True
+                        pass
+                    elif "n" in ans.lower():
+                        valid_input = True
+                        again = False
+                        time.sleep(0.8)
+                        print("\nThanks for playing.\n")
+                        time.sleep(0.4)
+                        print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+                        print('')
+                    else:
+                        raise TypeError
+                else:
+                    valid_input = True
+                    again = False
+                    time.sleep(0.8)
+                    print("\nThanks for playing.\n")
+                    time.sleep(0.4)
+                    print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
+                    print('')
+
+            except TypeError:
+                print("Invalid input. Please type y/n")
