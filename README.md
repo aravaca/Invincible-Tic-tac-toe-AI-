@@ -17,6 +17,6 @@ The grid uses 1-9 indexing from left to right in the following form:<br/>
 7 | 8 | 9<br/>
 
 ## Acknowledgement
-The source code for the basic version of the game is from Kylie Ying's GitHub (https://github.com/kying18). I want to give a special thanks to her wonderful YouTube tutorial. However, the class AI_Player in player.py, method get_owl in game.py, and the main method, which contains all necessary logic and procedures for the AI and its algorithm, are solely written on my own. I referred to notes from Justin Wyss-Gallifent (https://math.umd.edu/~immortal/) for the minimax algorithm and heuristic function. I want to give a special thanks to his wonderful detailed notes.
+The source code for the basic version of the game is from Kylie Ying's GitHub (https://github.com/kying18). I want to give a special thanks to her wonderful YouTube tutorial. However, the class AI_Player in player.py, method get_owl in game.py, and the main method, which contains all necessary logic and procedures for the AI and its algorithm, are solely written on my own. I have also added features such as a scoreboard, choosing the order in which player goes first, and playing again. For the minimax algorithm and heuristic function, I referred to notes from Justin Wyss-Gallifent (https://math.umd.edu/~immortal/). I want to give a special thanks to his wonderful detailed notes.
 
 
