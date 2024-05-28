@@ -26,23 +26,22 @@ class HumanPlayer(Player):
                 print("Invalid square, try again")
         return val
 
-# AI Player that never loses (either wins or ties) using Minimax algorithm
-# @author Hyungsuk Choi (c)2024
 class AIPlayer(Player):
     def __init__(self, letter):
         super().__init__(letter)
     
     def get_move(self, game):
-        # lookahead one move using sim, a copy of the current game
         max = float('-inf')
         ans = None
         opponent_letter = 'X' if self.letter == 'O' else 'O'
         for square in game.available_moves():
+            # sim is a copy of the current game that allows the AI to simulate the next move.
+            # It does not affect the current status of the game
             sim = copy.deepcopy(game)
             sim.make_move(square, self.letter)
-            # h() = MAX OWL (AI) - MIN OWL
-            heuristic = sim.check_owl(self.letter) - sim.check_owl(opponent_letter)
-            # print(square, heuristic) #for debugging purposes
+            # heuristic is calculated by subtracting the minimizer's(HumanPlayer) OWL from the maximizer's(AI) OWL
+            # An OWL is a line which contains at least one of the player’s marks and none of the opponent’s
+            heuristic = sim.get_owl(self.letter) - sim.get_owl(opponent_letter)
             if heuristic > max:
                 max = heuristic
                 ans = square
