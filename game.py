@@ -165,7 +165,7 @@ if __name__ == '__main__':
                 else:
                     raise TypeError
             except TypeError:
-                print("Invalid input. Please type y/n")
+                print("\nInvalid input. Please type y/n")
         
         print("\nCurrent record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
         print('')
@@ -198,4 +198,4 @@ if __name__ == '__main__':
                     print('')
 
             except TypeError:
-                print("Invalid input. Please type y/n")
+                print("\nInvalid input. Please type y/n")
