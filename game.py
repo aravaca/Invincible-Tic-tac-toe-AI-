@@ -1,4 +1,4 @@
-import time
+import time, random
 from player import HumanPlayer, AI_Player
 
 class TicTacToe:
@@ -32,9 +32,22 @@ class TicTacToe:
     def empty_squares(self):
         return ' ' in self.board
     
+    @staticmethod
     def num_empty_squares(self):
         return self.board.count(' ')
     
+    # simulate a move for the AI
+    def sim_move(self, square, letter):
+        if self.board[square] == ' ':
+            self.board[square] = letter
+            return True
+        return False
+    
+    # return to state before simulation for the AI
+    def return_state(self, square):
+        self.board[square] = ' '
+    
+    # actually make a move for the HumanPlayer
     def make_move(self, square, letter):
         if self.board[square] == ' ':
             self.board[square] = letter
@@ -64,43 +77,55 @@ class TicTacToe:
                 return True
         return False
 
-    # This function calculates the number of OWLs for a specified player
-    # It also contains other copmutational factors apart from OWLs to enhance the performance of AI Player
+    # This function calculates the number of OWLs of 2 for a specified player
+    # OWLs of count stand for opened (non-blocked) winning lines of two
     def get_owl(self, letter):
-        count = 0
+        owl = 0
         opponent_letter = 'X' if letter == 'O' else 'O'
+
         for row in [self.board[i*3: (i+1)*3] for i in range(3)]:
-            #check number of OWLs
-            if letter in row and opponent_letter not in row:
-                count+=1
-            #prevent loss
-            if row.count(opponent_letter) == 2 and letter in row:
-                count+=10
-            #guarantee win
-            if row.count(letter) == 3:
-                count+=100
+            #check number of OWLs, lowest priority
+            if row.count(letter) == 2 and opponent_letter not in row:
+                owl+=1
+
         for col in [self.board[i::3] for i in range(3)]:        
-            if letter in col and opponent_letter not in col:
-                count+=1
-            if col.count(opponent_letter) == 2 and letter in col:
-                count+=10
-            if col.count(letter) == 3:
-                count+=100
+            if col.count(letter) == 2 and opponent_letter not in col:
+                owl+=1
+
         for diagonal1 in [self.board[::4]]:           
-            if letter in diagonal1 and opponent_letter not in diagonal1:
-                count+=1
-            if diagonal1.count(opponent_letter) == 2 and letter in diagonal1:
-                count+=10
-            if diagonal1.count(letter) == 3:
-                count+=100
+            if diagonal1.count(letter) == 2 and opponent_letter not in diagonal1:
+                owl+=1
+
         for diagonal2 in [self.board[2:7:2]]:
-            if letter in diagonal2 and opponent_letter not in diagonal2:
-                count+=1
-            if diagonal2.count(opponent_letter) == 2 and letter in diagonal2:
-                count+=10
-            if diagonal2.count(letter) == 3:
-                count+=100
-        return count
+            if diagonal2.count(letter) == 2 and opponent_letter not in diagonal2:
+                owl+=1
+
+        return owl
+
+    # This function checks whether there exists a row/col/diagonal with
+    # two 'letter's and a blank and returns the boolean value with the 
+    # index of the blank square 
+    def check_two_in_row(self, letter, square):
+        row_ind = square // 3
+        row = self.board[row_ind*3:(row_ind+1)*3]
+        if row.count(letter) == 2 and ' ' in row:
+            return (True, row.index(' ') + (3 * row_ind))
+        
+        col_ind = square % 3
+        col = [self.board[col_ind+i*3] for i in range(3)]
+        if col.count(letter) == 2 and ' ' in col:
+            return (True, (col.index(' ') * 3) + col_ind)
+        
+        if square % 2 == 0:
+            diagonal1 = [self.board[i] for i in [0, 4, 8]]
+            if diagonal1.count(letter) == 2 and ' ' in diagonal1:
+                return (True, diagonal1.index(' ') * 4)
+            
+            diagonal2 = [self.board[i] for i in [2, 4, 6]]
+            if diagonal2.count(letter) == 2 and ' ' in diagonal2:
+                return (True, (diagonal2.index(' ') * 2) + 2)
+            
+        return (False, 0)
 
 
 def play(game, x_player, o_player, print_game=True, init=True):
@@ -137,7 +162,6 @@ def play(game, x_player, o_player, print_game=True, init=True):
                 return letter  # ends the loop and exits the game
             
             letter = 'O' if letter == 'X' else 'X'  # switches player
-
     # end of while loop
 
     if print_game:
@@ -176,7 +200,7 @@ if __name__ == '__main__':
         while not valid_input:
             try:
                 # this if statement prevents possible stack overflow and limits the maximum # of losses/ties to 100
-                if TicTacToe.loss <= 100 and TicTacToe.tie <= 100:
+                if TicTacToe.loss < 100 and TicTacToe.tie < 100:
                     ans = str(input("Would you like to play again? (y/n): "))
                     if "y" in ans.lower():
                         valid_input = True
