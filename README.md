@@ -4,7 +4,7 @@ This project includes a classic 3x3 tic-tac-toe game where you play against an u
 
 ## Description
 
-To play the game on Windows, simply download the tic-tac-toe_AI.exe file in the dist folder and run it. Otherwise, assuming that you have Python installed, copy the source code (or clone the repository) and run the game using the following command:
+To play the game on Windows, simply download the tic-tac-toe_AI.exe file in the dist folder and run it. On other operating systems, assuming that you have Python installed, copy the source code (or clone the repository) and run the game using the following command:
 ```bash
 python game.py
 ```
