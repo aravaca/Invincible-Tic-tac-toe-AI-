@@ -8,6 +8,14 @@ class Player:
     def get_move(self, game):
         pass
 
+class RandomComputerPlayer(Player):
+    def __init__(self, letter):
+        super().__init__(letter)
+
+    def get_move(self, game):
+        square = random.choice(game.available_moves())
+        return square
+
 class HumanPlayer(Player):
     def __init__(self, letter):
         super().__init__(letter)
@@ -34,9 +42,13 @@ class AI_Player(Player):
 
         opponent = 'X' if self.letter == 'O' else 'O'
 
-        # edge case, N/A priority
+        # edge case #1, N/A priority
         if sim.board[2::4] == ['X', 'X'] and sim.board[4] == 'O' and sim.num_empty_squares(sim) == 6:
             return random.choice([1,3,5,7])
+        
+        # edge case #2, N/A priority
+        if sim.board[0:5:4] == ['X', 'X'] and sim.board[8] == 'O' and sim.num_empty_squares(sim) == 6:
+            return random.choice([2, 6])
 
         # simulate a move, guarantee win, highest priority
         for square in sim.available_moves():
