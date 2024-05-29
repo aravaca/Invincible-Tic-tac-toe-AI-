@@ -2,6 +2,7 @@
 
 (ENG)<br/>
 (KOR TRANSLATION)<br/>
+<br/>
 This project includes a classic 3x3 tic-tac-toe game where you play against an unbeatable AI computer. The AI uses Newell and Simon's 1972 tic-tac-toe model as its algorithm.<br/>
 이 프로젝트는 절대 지지 않는 인공지능 컴퓨터와 대결하는 3x3 틱택토 게임을 포함합니다. 인공지능은 뉴웰과 사이먼의 1972 틱택토 모델을 알고리즘으로 사용합니다.
 
