@@ -8,7 +8,7 @@ This project includes a classic 3x3 tic-tac-toe game where you play against an u
 
 ## Basic Rules
 
-![]([https://github.com/aravaca/tic-tac-toe/assets/157980478/328b519d-0483-48a7-aaf6-08233b74a4ac ](https://upload.wikimedia.org/wikipedia/commons/3/32/Tic_tac_toe.svg)| width=100) <br/>
+![](https://github.com/aravaca/tic-tac-toe/assets/157980478/328b519d-0483-48a7-aaf6-08233b74a4ac| width=100) <br/>
 Two players take turns putting their marks (either X or O) in empty squares. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. Tic-tac-toe is a classic zero-sum game meaning that winning of a player automatically leads to losing of the other player. If that is not the case, it's a tie. <br/>
 두 명의 선수가 돌아가며 3x3 판 위 빈 사각형에 자신의 말(X 또는 O)을 넣습니다. 자신의 말 중 3개를 연속으로 연결시킨 첫 번째 선수가 승자입니다. 틱택토는 한 선수의 승리가 자동으로 다른 선수의 패배로 이어진다는 의미에서 고전적인 제로섬 게임입니다. 만약 누구 한 명이라도 이기거나 지지 않는다면 경기는 무승부입니다.
 
