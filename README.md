@@ -4,13 +4,13 @@ This project includes a classic 3x3 tic-tac-toe game where you play against an u
 
 ## Description
 
-To play the game on Windows, simply download the tic-tac-toe_AI.exe file in the dist folder and run it. On other operating systems, assuming that you have Python installed, clone the repository and run the game using the following command in the terminal:
+To play the game on Windows, simply download and run the game.exe file in the dist folder. On other operating systems, assuming that you have Python installed, clone the repository and run the game using the following command in the terminal:
 ```bash
 git clone https://github.com/aravaca/tic-tac-toe
 cd tic-tac-toe\
 python game.py
 ```
-Then, follow the instructions as you play.
+Then, follow the instructions as you play on the console.
 
 NOTE:
 The grid uses 1-9 indexing from left to right in the following form:<br/>
