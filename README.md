@@ -6,6 +6,12 @@
 This project includes a classic 3x3 tic-tac-toe game where you play against an unbeatable AI computer. The AI adopts Newell and Simon's 1972 tic-tac-toe model as its smart algorithm.<br/>
 이 프로젝트는 절대 지지 않는 인공지능 컴퓨터와 대결하는 3x3 틱택토 게임을 구현합니다. 뉴웰과 사이먼의 1972 틱택토 모델을 알고리즘으로 채택하였습니다.
 
+## Basic Rules
+
+![image](https://github.com/aravaca/tic-tac-toe/assets/157980478/328b519d-0483-48a7-aaf6-08233b74a4ac)
+Two players take turns putting their marks (either X or O) in empty squares. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. Tic-tac-toe is a classic zero-sum game meaning that winning of a player automatically leads to losing of the other player. If that is not the case, it's a tie. <br/>
+두 명의 선수가 돌아가며 3x3 판 위 빈 사각형에 자신의 말(X 또는 O)을 넣습니다. 자신의 말 중 3개를 연속으로 연결시킨 첫 번째 선수가 승자입니다. 틱택토는 한 선수의 승리가 자동으로 다른 선수의 패배로 이어진다는 의미에서 고전적인 제로섬 게임입니다. 만약 누구 한 명이라도 이기거나 지지 않는다면 경기는 무승부입니다.
+
 ## Description
 
 To play the game on Windows, simply download and run the game.exe file in the dist folder. On other operating systems, assuming that you have Python installed, clone the repository and run the game using the following command in the terminal:<br/>
