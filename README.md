@@ -1,5 +1,5 @@
-E-mail: chs_3411@naver[DOT]com<br/>
-Any feedback/request is always welcomed!
+e-mail: chs_3411@naver[dot]com<br/>
+any feedback/request is always welcomed!
 
 
 # About Tic-tac-toe
