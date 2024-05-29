@@ -1,4 +1,4 @@
-E-mail: chs[UNDERSCORE]3411_AT_naver_DOT_com
+E-mail: chs_3411@naver[DOT]com<br/>
 Any feedback/request is always welcomed!
 
 
