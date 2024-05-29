@@ -145,9 +145,18 @@ def play(game, x_player, o_player, print_game=True, init=True):
             if print_game:
                 if letter == 'O':
                     time.sleep(0.8) #delay execution to imitate an AI feel
-                    print('AI makes a move to square {}.'.format(square + 1))
-                else:
-                    print('You made a move to square {}.'.format(square + 1))
+                    script = random.randint(0,3)
+                    match script:
+                        case 0:
+                            print('Hmm.. I\'ll move to square {}.'.format(square + 1))
+                        case 1:
+                            print('I\'ll pick square {}.'.format(square + 1))
+                        case 2:
+                            print('I\'ll take square {}!'.format(square + 1))
+                        case _:
+                            print('I\'ll choose square {}.'.format(square + 1))
+                # else:
+                #     print('You made a move to square {}.'.format(square + 1))
                 game.print_board()
                 print('')
 
@@ -155,7 +164,7 @@ def play(game, x_player, o_player, print_game=True, init=True):
                 if print_game:
                     if letter == 'O':
                         TicTacToe.loss+=1
-                        print('AI wins!')
+                        print('I win!')
                     else:
                         TicTacToe.win+=1
                         print("You win!!! (How though?? lol)")
@@ -174,7 +183,7 @@ if __name__ == '__main__':
     o_player = AI_Player('O')
     again = True
 
-    print("Welcome to Tic-tac-toe vs AI. Your goal is to win against the smart AI computer.")
+    print("Hi, I am your smart Tic-tac-toe AI. Try your best to win against me!")
 
     while again:
         t = TicTacToe() # generate a new game board every attempt
@@ -209,7 +218,7 @@ if __name__ == '__main__':
                         valid_input = True
                         again = False
                         time.sleep(0.8)
-                        print("\nThanks for playing.\n")
+                        print("\nThanks for playing with me!\n")
                         time.sleep(0.4)
                         print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
                         time.sleep(3)
@@ -220,7 +229,7 @@ if __name__ == '__main__':
                     valid_input = True
                     again = False
                     time.sleep(0.8)
-                    print("\nThanks for playing.\n")
+                    print("\nThanks for playing with me!\n")
                     time.sleep(0.4)
                     print("Final record: {}W-{}L-{}D".format(TicTacToe.win, TicTacToe.loss, TicTacToe.tie))
                     time.sleep(3)
