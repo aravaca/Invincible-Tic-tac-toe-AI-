@@ -10,6 +10,11 @@ This project includes a classic 3x3 tic-tac-toe game where you play against an u
 Two players take turns putting their marks (either X or O) in empty squares. The first player to get 3 of their marks in a row (up, down, across, or diagonally) is the winner. Tic-tac-toe is a classic zero-sum game meaning that winning of a player automatically leads to losing of the other player. If that is not the case, it's a tie. <br/>
 두 명의 선수가 돌아가며 3x3 판 위 빈 사각형에 자신의 말(X 또는 O)을 넣습니다. 자신의 말 중 3개를 연속으로 연결시킨 첫 번째 선수가 승자입니다. 틱택토는 한 선수의 승리가 자동으로 다른 선수의 패배로 이어진다는 의미에서 고전적인 제로섬 게임입니다. 만약 누구 한 명이라도 이기거나 지지 않는다면 경기는 무승부입니다.
 
+## How does the AI work?
+
+The AI uses an algorithm that looks ahead a couple of moves and classifies all available moves in terms of priority. The AI will choose a move with the highest assigned priority to the extent that it does not present an opportunity for the human player to win. This allows the AI to tie in with the human player in the worst case.<br/>
+인공지능은 몇 수 앞을 내다보고 사용 가능한 모든 수를 우선 순위 측면에서 분류하는 알고리즘을 사용합니다. 인공지능은 인간 플레이어가 이길 수 있는 기회를 제시하지 않는 범위에서 가장 높은 우선 순위를 가진 수를 선택할 것입니다. 이것은 최악의 경우 인공지능이 인간 플레이어와 동점을 이루도록 합니다.
+
 ## Description
 
 To play the game on Windows, simply download and run the game.exe file in the dist folder. On other operating systems, assuming that you have Python installed, clone the repository and run the game using the following command in the terminal:<br/>
