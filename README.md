@@ -15,9 +15,15 @@ Two players take turns putting their marks (either X or O) in empty squares. The
 두 명의 선수가 번갈아가며 3x3 판 위 빈 사각형에 자신의 말(X 또는 O)을 넣습니다. 자신의 말 중 3개를 연속으로 연결시킨 첫 번째 선수가 승자입니다. 틱택토는 한 선수의 승리가 자동으로 다른 선수의 패배로 이어진다는 의미에서 고전적인 제로섬 게임입니다. 만약 누구 한 명이라도 이기거나 지지 않는다면 경기는 무승부입니다.
 
 ## How does the AI work?
+<img src="https://github.com/aravaca/tic-tac-toe/assets/157980478/ce26aeb3-ebca-46c6-a979-1dc178e30083" width="120">
 
 The AI uses an algorithm that looks ahead a couple of moves and classifies all available moves in terms of priority. The AI will choose a move with the highest assigned priority to the extent that it does not present an opportunity for the human player to win. This allows the AI to tie in with the human player in the worst case. <br/>
 인공지능은 몇 수 앞을 내다보고 사용 가능한 모든 수를 우선 순위 측면에서 분류하는 알고리즘을 사용합니다. 인공지능은 인간 플레이어가 이길 수 있는 기회를 제시하지 않는 범위에서 가장 높은 우선 순위를 가진 수를 선택할 것입니다. 이것은 최악의 경우 인공지능이 인간 플레이어와 동점을 이루도록 합니다.
+
+## Statistics
+
+The stats above demonstrate the win rates for each player in three different scenarios (AI vs Random, Random vs AI, and AI vs AI). The rates are computed from a sample of 100,000 randomly generated cases per scenario (so 300,000 cases in total!). It can be easily observed that the AI never loses regardless of the game configuration.
+위의 통계는 다양한 시나리오에서 각 플레이어의 승률을 보여줍니다. 각 시나리오당 무작위로 생성된 100,000건의 사례 샘플(AI vs Random, Random vs AI, AI vs AI)에서 승률이 계산됩니다. 테이블을 보면 AI는 게임 구성에 관계없이 절대 지지 않는다는 것을 쉽게 관찰할 수 있습니다.
 
 ## How to play
 
@@ -26,7 +32,7 @@ Windows에서 게임을 하려면 dist 폴더에서 game.exe 파일을 다운로
 ```bash
 git clone https://github.com/aravaca/tic-tac-toe
 cd tic-tac-toe\
-python game.py
+python game.py #or could be python3
 ```
 Then, follow the instructions as you play on the console.<br/>
 그런 다음 콘솔에서 플레이하며 게임 안내를 따르면 됩니다.
