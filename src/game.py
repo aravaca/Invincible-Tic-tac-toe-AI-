@@ -1,5 +1,5 @@
 import time, random
-from player import HumanPlayer, AI_Player
+from player import HumanPlayer, AI_Player, RandomComputerPlayer
 
 class TicTacToe:
 
@@ -209,7 +209,7 @@ if __name__ == '__main__':
         while not valid_input:
             try:
                 # this if statement prevents possible stack overflow and limits the maximum # of losses/ties to 100
-                if TicTacToe.loss < 100 and TicTacToe.tie < 100:
+                if TicTacToe.loss < 10000 and TicTacToe.tie < 10000:
                     ans = str(input("Would you like to play again? (y/n): "))
                     if "y" in ans.lower():
                         valid_input = True
@@ -237,3 +237,47 @@ if __name__ == '__main__':
                     
             except TypeError:
                 print("\nInvalid input. Please type y/n\n")
+
+
+## USE THE BELOW CONFIGURATION OF METHODS TO COMPUTE W-L-D STATISTICS
+
+# def run_stats(game, x_player, o_player, print_game=True):
+
+#     letter = 'O' # X GOES FIRST. CHANGE IT TO 'O' TO MAKE O GO FIRST
+
+#     while game.empty_squares():
+#         if letter == 'O':
+#             square = o_player.get_move(game)
+#         else:
+#             square = x_player.get_move(game)
+#         if game.make_move(square, letter):
+
+#             if game.current_winner:
+#                 if print_game:
+#                     if letter == 'X':
+#                         game.print_board()
+#                         print('')
+#                         TicTacToe.win+=1
+#                     else:
+#                         TicTacToe.loss+=1
+#                 return letter  # ends the loop and exits the game
+            
+#             letter = 'O' if letter == 'X' else 'X'  # switches player
+#     # end of while loop
+
+#     if print_game:
+#         TicTacToe.tie+=1
+
+# if __name__ == '__main__':
+    
+#     x_player = RandomComputerPlayer('X')
+#     o_player = AI_Player('O') 
+#     SAMPLE = 10000 #CHANGE THIS VALUE TO CHANGE SAMPLE SIZE
+#     count = SAMPLE
+
+#     while count != 0:
+#         t = TicTacToe() # generate a new game board every attempt
+#         run_stats(t, x_player, o_player, print_game=True) 
+#         count -= 1
+
+#     print("W:{}%, L:{}%, D:{}%".format((TicTacToe.win/SAMPLE)*100, (TicTacToe.loss/SAMPLE)*100, (TicTacToe.tie/SAMPLE)*100))
