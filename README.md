@@ -19,6 +19,11 @@ Two players take turns putting their marks (either X or O) in empty squares. The
 The AI uses an algorithm that looks ahead a couple of moves and classifies all available moves in terms of priority. The AI will choose a move with the highest assigned priority to the extent that it does not present an opportunity for the human player to win. This allows the AI to tie in with the human player in the worst case. <br/>
 인공지능은 몇 수 앞을 내다보고 사용 가능한 모든 수를 우선 순위 측면에서 분류하는 알고리즘을 사용합니다. 인공지능은 인간 플레이어가 이길 수 있는 기회를 제시하지 않는 범위에서 가장 높은 우선 순위를 가진 수를 선택할 것입니다. 이것은 최악의 경우 인공지능이 인간 플레이어와 동점을 이루도록 합니다.
 
+## Statistics
+
+The stats above demonstrate the win rates for each player in three different scenarios (AI vs Random, Random vs AI, and AI vs AI). The rates are computed from a sample of 100,000 randomly generated cases per scenario (so 300,000 cases in total!). It can be easily observed that the AI never loses regardless of the game configuration.
+위의 통계는 다양한 시나리오에서 각 플레이어의 승률을 보여줍니다. 각 시나리오당 무작위로 생성된 100,000건의 사례 샘플(AI vs Random, Random vs AI, AI vs AI)에서 승률이 계산됩니다. 테이블을 보면 AI는 게임 구성에 관계없이 절대 지지 않는다는 것을 쉽게 관찰할 수 있습니다.
+
 ## How to play
 
 To play the game on Windows, simply download and run the game.exe file in the dist folder. On other operating systems, assuming that you have Python installed, clone the repository and run the game using the command below in the terminal.<br/>
