@@ -32,7 +32,7 @@ To play the game on Windows, simply download and run the game.exe file in the di
 Windows에서 게임을 하려면 dist 폴더에서 game.exe 파일을 다운로드하여 실행하기만 하면 됩니다. 다른 운영 체제에서는 Python이 설치되어 있다고 가정하에, repository를 복제하고 터미널에서 다음 명령을 사용하여 게임을 실행합니다.<br/>
 ```bash
 git clone https://github.com/aravaca/tic-tac-toe
-cd tic-tac-toe\
+cd tic-tac-toe\src
 python game.py #or could be python3
 ```
 Then, follow the instructions as you play on the console.<br/>
