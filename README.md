@@ -16,8 +16,8 @@ Two players take turns putting their marks (either X or O) in empty squares. The
 
 ## How can the AI never lose?
 
-The AI uses an algorithm that looks ahead a couple of moves and classifies all available moves in terms of priority. The AI will choose the first available move with the highest assigned priority so long as it does not present an opportunity for the human player to win. This allows the AI to tie in with the human player in the worst case. The advantage of this algorithm over the minimax algorithm with heuristics is efficiency (speed). The minimax algorithm employs recursion to look ahead multiple moves and construct a complete game tree. This is definitely inefficient as each recursion call is pushed onto the stack frame for later use. <br/>
-인공지능은 몇 수 앞을 내다 보고 사용 가능한 모든 움직임을 우선순위에 따라 분류하는 알고리즘을 사용합니다. 인공지능은 인간 플레이어가 이길 수 있는 기회를 제공하지 않는 한 가장 높은 우선순위로 사용 가능한 첫 번째 움직임을 선택합니다. 이것은 최악의 경우 인공지능이 인간 플레이어와 동점을 만들 수 있도록 합니다. 휴리스틱이 있는 미니맥스 알고리즘에 비해 이 알고리즘의 장점은 효율성(속도)입니다. 미니맥스 알고리즘은 재귀를 사용하여 무한한 수를 내다 보고 게임 트리를 구성합니다. 이것은 매번 재귀 호출을 할 때 마다 스택 프레임에 푸시되기 때문에 분명히 비효율적입니다.
+The AI uses an algorithm that looks ahead a couple of moves and classifies all available moves in terms of priority. The AI will choose the first available move with the highest assigned priority so long as it does not present an opportunity for the human player to win. This allows the AI to tie in with the human player in the worst case. The advantage of this algorithm over the minimax algorithm with heuristics is efficiency (speed). The minimax algorithm employs recursion to look ahead at most nine moves and construct a complete game tree. This is definitely inefficient as each recursion call is pushed onto the stack frame for later use. <br/>
+인공지능은 몇 수 앞을 내다 보고 사용 가능한 모든 움직임을 우선순위에 따라 분류하는 알고리즘을 사용합니다. 인공지능은 인간 플레이어가 이길 수 있는 기회를 제공하지 않는 한 가장 높은 우선순위로 사용 가능한 첫 번째 움직임을 선택합니다. 이것은 최악의 경우 인공지능이 인간 플레이어와 동점을 만들 수 있도록 합니다. 휴리스틱이 있는 미니맥스 알고리즘에 비해 이 알고리즘의 장점은 효율성(속도)입니다. 미니맥스 알고리즘은 재귀를 사용하여 최대 9수를 내다 보고 게임 트리를 구축합니다. 이것은 매번 재귀 호출을 할 때 마다 스택 프레임에 푸시되기 때문에 분명히 비효율적입니다.
 
 ## Statistics
 
