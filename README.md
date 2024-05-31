@@ -1,7 +1,3 @@
-e-mail: chs_3411@naver[dot]com<br/>
-any feedback/request is always welcomed!
-
-
 # About Tic-tac-toe
 
 This project includes a classic 3x3 tic-tac-toe game where you play against an unbeatable AI computer. The algorithm is designed based on Newell and Simon's 1972 tic-tac-toe model.<br/>
